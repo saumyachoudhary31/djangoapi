@@ -1,0 +1,15 @@
+from django import forms
+class ApprovalForm(forms.Form):
+    first_name               =forms.CharField(max_length=20,widget=forms.TextInput(attrs={'placeholder':'enter first name'}))
+    last_name                =forms.CharField(max_length=20,widget=forms.TextInput(attrs={'placeholder':'enter last name'}))
+    Dependents               =forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder':'enter no. of dependants'}))
+    ApplicantIncome          =forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder':'enter app income'}))
+    CoapplicantIncome        =forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder':'enter coapp income'}))
+    LoanAmount               =forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder':'requested loan amt'}))
+    Loan_Amount_Term         =forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder':'laon amt terms'}))
+    Credit_History           =forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder':'enter credit history'}))
+    Gender                   =forms.ChoiceField(choices=[('Male','Male'),('Female','Female')])
+    Married                  =forms.ChoiceField(choices=[('Yes','Yes'),('No','No')])
+    Education      =forms.ChoiceField(choices=[('Graduated','Graduated'),('Not_Graduated','Not_Graduated')])
+    Self_Employed            =forms.ChoiceField(choices=[('Yes','Yes'),('No','No')])
+    Property_Area            =forms.ChoiceField(choices=[('Rural','Rural'),('Urban','Urban'),('Semiurban','Semiurban')])
